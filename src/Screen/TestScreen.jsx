@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import useTestEnforcement from "../Hooks/useTestEnforcement";
 import { logEvent } from "../Utils/logger";
 import TestContent from "./TestContent";
@@ -12,12 +12,12 @@ export default function TestScreen() {
   const [warning, setWarning] = useState("");
   const [isTerminated, setIsTerminated] = useState(false);
 
-  const terminateTest = () => {
+  const terminateTest = useCallback(() => {
     setIsTerminated(true);
     logEvent(attemptId, "TEST_TERMINATED", {
       reason: "MAX_VIOLATIONS_REACHED",
     });
-  };
+  }, []);
 
   useTestEnforcement({
     attemptId,

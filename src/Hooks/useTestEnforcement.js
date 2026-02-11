@@ -100,5 +100,12 @@ export default function useTestEnforcement({
       document.removeEventListener("contextmenu", handleRightClick);
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [isTerminated]);
+  }, [
+    isTerminated,
+    attemptId,
+    maxViolations,
+    setViolations,
+    setWarning,
+    terminateTest,
+  ]);
 }
