@@ -1,8 +1,8 @@
 import { useCallback, useState } from "react";
 import useTestEnforcement from "../Hooks/useTestEnforcement";
 import { logEvent } from "../Utils/logger";
-import TestContent from "./TestContent";
-import TerminatedScreen from "./TerminatedScreen";
+import TestContent from "../Components/TestContent";
+import TerminatedScreen from "../Screen/TestTerminatedScreen";
 
 const attemptId = "ATTEMPT_001";
 const MAX_VIOLATIONS = 3;
